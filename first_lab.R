@@ -39,15 +39,38 @@ class(logical(c(0,1+2i)))
 class(logical(c("a", "b", "c")))
 class(logical(c(0.5,"aa")))
 
+#5
+matrix = matrix(c(5,6,7,8,15,14,13,12),nrow=2,ncol = 4)
 
+#6
+m1 = list("aa", 1)
+m2 = list(m1, "bb", 0)
+print(m2)
 
+#7
+str(z)
+names(z)=c("Ozon","Sugarzas","Szel","Homerseklet","Honap","Nap")
 
+#8
+vec = c(1,5,6,2,8,7)
+vec[5:6]
+vec[c(3,5,6)]
+matrix[,3]
+matrix[1,]
+matrix[1, drop = FALSE]
 
+#9
+z[2,]
+z_b = z[c(1,2,length(z[,1])-1,length(z[,1])),]
+z_b
 
+print(z$Ozon[17])
 
+z_d = z[!is.na(z$Ozon),]
 
+z_e_solar_mean = mean(z_d$Sugarzas)
 
+#10
+help(subset)
 
-
-
-
+hottest_Month = subset(z,Sugarzas == max(z$Sugarzas,na.rm = TRUE),select = c("Honap","Nap"))

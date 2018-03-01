@@ -56,6 +56,31 @@ sorvalasztas_c(2,3)
 sorvalasztas_c(2)
 
 #5
+sorrend_a = function(rank){
+  data = read.csv("001.csv")
+  adat1 = data[order(adat$sulfate, adat$nitrate, adat$Date, na.last = NA), ]
+  adat1[rank, ]
+}
+
+sorrend_a(1)
+
+sorrend_b = function(rank){
+  if(nrow(data[!is.na(data$sulfate)]) < rank){
+    print("Nincs ennyi sor!")
+    stop()
+  }
+  data = read.csv("001.csv")
+  adat1 = data[order(adat$sulfate, adat$nitrate, adat$Date, na.last = NA), ]
+  adat1[rank, ]
+}
+
+
+
+
+
+
+
+
 
 
 
